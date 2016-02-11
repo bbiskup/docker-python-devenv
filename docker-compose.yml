@@ -81,7 +81,7 @@ bb_python:
     # image: puckel/docker-airflow
     build: .
     volumes:
-      - src:/code
+      - ./src:/usr/local/airflow/src
     entrypoint: 
      - /bin/bash
      - -c
