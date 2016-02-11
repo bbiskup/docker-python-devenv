@@ -1,5 +1,17 @@
 # Sample development environment for Python/Docker to supersede the use of virtualenv 
 
+## Prerequisites & Installation
+
+ Linux (tested on Ubuntu 15.04)
+
+ - Install Docker
+ - Install docker-compose
+ - Install GNU make (optional; for running sample commands)
+
+ $ docker-compose up -d
+
+## Overview
+
 - Goals:
   - avoid virtualenv (solves only part of what Docker solves)
   - reproducible system libraries regardless of host system
