@@ -1,0 +1,2 @@
+Sample Docker Python project that uses containerised interpreter
+for development 
