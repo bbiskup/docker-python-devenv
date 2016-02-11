@@ -8,7 +8,8 @@
  - Install docker-compose
  - Install GNU make (optional; for running sample commands)
 
- $ docker-compose up -d
+ Optional: run `docker-compose up -d` to launch Airflow containers.
+ The sample `make` targets work independently of Airflow. 
 
 ## Overview
 
