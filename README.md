@@ -27,3 +27,7 @@
   - mount local code as volume
 - use "docker-compose run" to run (mostly Python) commands in environment
   specified in Dockerfile. I.e., system libraries and Python packages
+
+## Python/Docker workflow
+
+See `Makefile` for sample invocations.
