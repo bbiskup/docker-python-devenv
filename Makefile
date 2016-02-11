@@ -1,9 +1,16 @@
 # Sample invocations
+
 run_shell_command:
-	docker-compose run proj_container "pip freeze"
+	./dockercmd.sh "pip freeze"
 
 run_ipython:
-	docker-compose run proj_container ipython
+	./dockercmd.sh ipython
+
+run_bash:
+	./dockercmd.sh bash
 
 run_local_code:
-	docker-compose run proj_container "python src/pkg1/mod1.py"
+	./dockercmd.sh "python pkg1/mod1.py"
+
+run_tests:
+	./dockercmd.sh "py.test"

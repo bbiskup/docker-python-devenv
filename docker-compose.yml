@@ -84,7 +84,9 @@ proj_container:
     volumes:
       # Make local code available.
       # Extra benefit: shell path completion works in local shell
-      - ./src:/usr/local/airflow/src
+      - ./pkg1:/usr/local/airflow/pkg1
+      - ./setup.py:/usr/local/airflow/setup.py
+      - ./tests:/usr/local/airflow/tests
     entrypoint:
      # This allows to run any commands in bash.
      # Caveat: the command and its arguments must be enclosed
