@@ -1,4 +1,9 @@
 # Adapted from https://github.com/puckel/docker-airflow/
+
+# This is only an example. The container relevant for illustrating how
+# to use Python/Docker in development is proj_container at
+# the bottom.
+
 mysql:
     image: mysql
     restart: always
