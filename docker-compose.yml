@@ -92,6 +92,7 @@ proj_container:
      # Caveat: the command and its arguments must be enclosed
      # in parentheses.
      # e.g. 
-     # docker-compose run proj_container "pip freeze"
+     # docker-compose run proj_container "pip freeze".
+     # use the script ./dockercmd.sh to avoid this
      - /bin/bash
      - -c
