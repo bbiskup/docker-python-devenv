@@ -1,3 +1,4 @@
+# Adapted from https://github.com/puckel/docker-airflow/
 mysql:
     image: mysql
     restart: always
@@ -77,11 +78,18 @@ worker:
         - rabbitmq:rabbitmq
     command: worker
 
-bb_python:
-    # image: puckel/docker-airflow
+# This is the project-specific container for running one-off commands
+proj_container:
     build: .
     volumes:
+      # Make local code available.
+      # Extra benefit: shell path completion works in local shell
       - ./src:/usr/local/airflow/src
-    entrypoint: 
+    entrypoint:
+     # This allows to run any commands in bash.
+     # Caveat: the command and its arguments must be enclosed
+     # in parentheses.
+     # e.g. 
+     # docker-compose run proj_container "pip freeze"
      - /bin/bash
      - -c
