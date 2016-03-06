@@ -6,7 +6,7 @@
 
 mysql:
     image: mysql
-    restart: always
+    restart: unless-stopped
     ports:
         - "3306:3306"
     environment:
@@ -17,7 +17,7 @@ mysql:
 
 rabbitmq:
     image: rabbitmq:3-management
-    restart: always
+    restart: unless-stopped
     ports:
         - "15672:15672"
         - "5672:5672"
@@ -29,7 +29,7 @@ rabbitmq:
 webserver:
     # image: puckel/docker-airflow
     build: .
-    restart: always
+    restart: unless-stopped
     # volumes:
     #     - /localpath/to/dags:/usr/local/airflow/dags
     environment:
@@ -46,7 +46,7 @@ webserver:
 flower:
     # image: puckel/docker-airflow
     build: .
-    restart: always
+    restart: unless-stopped
     environment:
         - AIRFLOW_HOME=/usr/local/airflow
     ports:
@@ -58,7 +58,7 @@ flower:
 scheduler:
     # image: puckel/docker-airflow
     build: .
-    restart: always
+    restart: unless-stopped
     # volumes:
     #     - /localpath/to/dags:/usr/local/airflow/dags
     environment:
@@ -71,7 +71,7 @@ scheduler:
 worker:
     # image: puckel/docker-airflow
     build: .
-    restart: always
+    restart: unless-stopped
     # volumes:
     #     - /localpath/to/dags:/usr/local/airflow/dags
     environment:
@@ -86,6 +86,7 @@ worker:
 # This is the project-specific container for running one-off commands
 proj_container:
     build: .
+    restart: "no"
     volumes:
       # Make local code available.
       # Extra benefit: shell path completion works in local shell
