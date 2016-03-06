@@ -1,16 +1,16 @@
 # Sample invocations
 
-run_shell_command:
+shell_command:
 	./dockercmd.sh pip freeze
 
-run_ipython:
+ipython:
 	./dockercmd.sh ipython
 
-run_bash:
+bash:
 	./dockercmd.sh bash
 
-run_local_code:
+local_code:
 	./dockercmd.sh python pkg1/mod1.py
 
-run_tests:
+test:
 	./dockercmd.sh py.test
